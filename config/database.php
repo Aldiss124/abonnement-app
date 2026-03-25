@@ -5,7 +5,7 @@
 // ============================================================
 
 // Paramètres de connexion — à adapter selon votre environnement
-define('DB_HOST',    'mysql://root:LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA@crossover.proxy.rlwy.net:43376/railway');
+define('DB_HOST',    'crossover.proxy.rlwy.net');
 define('DB_NAME',    'railway');
 define('DB_USER',    'root');
 define('DB_PASS',    'LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA');
