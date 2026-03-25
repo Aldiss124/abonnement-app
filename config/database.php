@@ -5,7 +5,7 @@
 // ============================================================
 
 // Paramètres de connexion — à adapter selon votre environnement
-define('DB_HOST',    'mysql.railway.internal');
+define('DB_HOST',    'mysql://root:LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA@crossover.proxy.rlwy.net:43376/railway');
 define('DB_NAME',    'railway');
 define('DB_USER',    'root');
 define('DB_PASS',    'LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA');
@@ -20,7 +20,7 @@ function getDB(): PDO {
     if ($pdo === null) {
         try {
             // Ligne corrigée : pas de crochets, pas de doublons
-            $dsn = "mysql:host=" . DB_HOST . ";port=3306;dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+            $dsn = "mysql:host=" . DB_HOST . ";port=43376;dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
