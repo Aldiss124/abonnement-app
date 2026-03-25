@@ -5,10 +5,10 @@
 // ============================================================
 
 // Paramètres de connexion — à adapter selon votre environnement
-define('DB_HOST',     'localhost');
-define('DB_NAME',     'abonnement_db');
-define('DB_USER',     'root');        // Changer en production
-define('DB_PASS',     '');            // Changer en production
+define('DB_HOST',     'db-abonnement-gastonmani066-2fa7.l.aivencloud.com');
+define('DB_NAME',     'defaultdb');
+define('DB_USER',     'avnadmin');        // Changer en production
+define('DB_PASS',     'AVNS_7KxkKuK2VMIP_I9SIAs');            // Changer en production
 define('DB_CHARSET',  'utf8mb4');
 
 // ============================================================
@@ -18,8 +18,8 @@ function getDB(): PDO {
     static $pdo = null;
 
     if ($pdo === null) {
-        try {
-            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+        try {$dsn = "mysql:host=" . DB_HOST . ";port=16947;dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+            $dsn = 
 
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,  // Lève des exceptions
