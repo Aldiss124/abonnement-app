@@ -4,11 +4,10 @@
 // Configuration de la connexion à la base de données MySQL
 // ============================================================
 
-// Paramètres de connexion — à adapter selon votre environnement
-define('DB_HOST',    'crossover.proxy.rlwy.net');
-define('DB_NAME',    'railway');
-define('DB_USER',    'root');
-define('DB_PASS',    'LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA');
+define('DB_HOST', 'crossover.proxy.rlwy.net');
+define('DB_NAME', 'railway');
+define('DB_USER', 'root');
+define('DB_PASS', 'LJRxFMDWrEaIpSbXELPHOsEMqtODFoCA');
 define('DB_CHARSET', 'utf8mb4');
 
 // ============================================================
@@ -19,7 +18,7 @@ function getDB(): PDO {
 
     if ($pdo === null) {
         try {
-            // Ligne corrigée : pas de crochets, pas de doublons
+            // Utilisation du port public Railway 43376
             $dsn = "mysql:host=" . DB_HOST . ";port=43376;dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
 
             $options = [
@@ -31,17 +30,16 @@ function getDB(): PDO {
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
 
         } catch (PDOException $e) {
-            // En production, ne pas afficher les détails de l'erreur
-            die(json_encode(['error' => 'Connexion à la base de données impossible.']));
+            // Affiche l'erreur réelle pour le débogage (à retirer après succès)
+            die(json_encode(['error' => 'Erreur : ' . $e->getMessage()]));
         }
     }
-
     return $pdo;
 }
 
 // ============================================================
 // Constantes de l'application
 // ============================================================
-define('APP_NAME',    'AbonManager');
+define('APP_NAME', 'AbonManager');
 define('APP_VERSION', '1.0.0');
 define('DELAI_ALERTE', 3);
