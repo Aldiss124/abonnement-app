@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS Principal -->
-    <link rel="stylesheet" href="/abonnement-app/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
