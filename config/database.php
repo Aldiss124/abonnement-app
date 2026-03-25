@@ -19,7 +19,6 @@ function getDB(): PDO {
 
     if ($pdo === null) {
         try {$dsn = "mysql:host=" . DB_HOST . ";port=16947;dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-            $dsn = 
 
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,  // Lève des exceptions
